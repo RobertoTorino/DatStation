@@ -1,12 +1,13 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ---
+[PRIVACY_POLICY.md](PRIVACY_POLICY.md)
+
+---
 
 # DatStation
 
-### 
-
-Lightweight Android App with database that contains ID's:
+### Lightweight Android App with database that contains ID's:
 - for almost all PS1 (PSX) games.
 - for almost all PS2 games.
 - for almost all PS3 games.
@@ -32,29 +33,6 @@ Lightweight Android App with database that contains ID's:
 
 ---
 
-# Development
-
-### ADB
-
-#### Install/Uninstall Apps
-```
-adb uninstall com.robertotorino.datstation
-adb install app\build\outputs\apk\debug\datstation-debug.apk
-adb shell pm clear com.robertotorino.datstation
-```
-
-### GitHub
-
-```powershell
-git pull origin master
-
-git remote add origin git@github.com:RobertoTorino/DatStation.git
-git push -u origin master
-git fetch --all
-git remote -v
-```
-
 ![qrcode-gh.png](media/qrcode-gh.png)
-
 
 **[RobertoTorino](https://github.com/RobertoTorino)**        
