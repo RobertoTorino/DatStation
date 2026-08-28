@@ -1,7 +1,7 @@
 [
   {
     "version": "System Software v3.0-14.00.00 (Beta)",
-    "releaseDate": "July 24, 2026",
+    "releaseDate": "August 6, 2026",
     "notes": [
       "We’ve turned on Enhance PSSR Image Quality as a default setting. When you update the system software, this setting automatically turns on.",
       "When you enable this feature, enhanced PSSR is used even for games that support the previous version of PSSR so you can enjoy a sharper and clearer visual experience.",

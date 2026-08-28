@@ -210,13 +210,7 @@
         "notes": [
           "Yaroze development system."
         ]
-      }
-    ]
-  },
-  {
-    "id": "DTL3000",
-    "name": "DTLH3_Series",
-    "entries": [
+      },
       {
         "version": "System Software Version v2.2",
         "release_date": "1995-04-12",
@@ -354,7 +348,7 @@
   },
   {
     "id": "SCPH1000",
-    "name": "SCPH1_Series",
+    "name": "SCPH1000_Series",
     "entries": [
       {
         "version": "System Software Version v?",
@@ -479,13 +473,7 @@
           "FMV skipping issues.",
           "2 controllers included for this model."
         ]
-      }
-    ]
-  },
-  {
-    "id": "SCPH5000",
-    "name": "SCPH3_Series",
-    "entries": [
+      },
       {
         "version": "System Software Version v2.2",
         "release_date": "1995-12-04",
