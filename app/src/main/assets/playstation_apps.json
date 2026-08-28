@@ -1,0 +1,2963 @@
+[
+  {
+    "app": "Digital Comics / Digital Comics Reader",
+    "category": "Reader / comics",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "PSP regions with Digital Comics service",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Sony manual documented",
+    "notes": "Sony PSP manual documents the Digital Comics application and viewing comics with it."
+  },
+  {
+    "app": "SensMe channels",
+    "category": "Music",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "Downloadable PSP music-listening application that automatically categorized tracks into channels."
+  },
+  {
+    "app": "Music Unlimited powered by Qriocity",
+    "category": "Music",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "Varied",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Sony manual documented",
+    "notes": "Listed in PSP manual under Music; later superseded by other Sony music services."
+  },
+  {
+    "app": "LocationFree Player",
+    "category": "TV / video",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "Regions with LocationFree Base Station support",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "PSP manual lists LocationFree Player under Network."
+  },
+  {
+    "app": "Skype",
+    "category": "Communication",
+    "platforms": {
+      "psp": "Released",
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "Varied",
+    "overallStatus": "Discontinued on legacy platforms",
+    "documentationLevel": "Sony manual / archived Sony page",
+    "notes": "PSP manual documents Skype; archived PS Vita apps page lists Skype for Vita."
+  },
+  {
+    "app": "Remote Play",
+    "category": "Remote play / utility",
+    "platforms": {
+      "psp": "Released",
+      "ps_vita": "Bundled",
+      "ps3": "Feature/app",
+      "ps4": "Feature/app",
+      "ps5": "Feature/app"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Active on newer platforms; legacy on PSP/Vita/PS3",
+    "documentationLevel": "Sony manual / archived Sony page",
+    "notes": "PSP manual documents Remote Play; archived Vita page lists Remote Play."
+  },
+  {
+    "app": "Internet Radio",
+    "category": "Music / radio",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "PSP manual lists Internet Radio under Network."
+  },
+  {
+    "app": "RSS Channel",
+    "category": "Media / feeds",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "PSP manual lists RSS Channel and streaming audio/image functions."
+  },
+  {
+    "app": "Internet Browser",
+    "category": "Browser",
+    "platforms": {
+      "psp": "Built-in",
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Sony manual / archived Sony page",
+    "notes": "Documented in PSP manual and archived Vita apps page."
+  },
+  {
+    "app": "Internet Search",
+    "category": "Search",
+    "platforms": {
+      "psp": "Built-in"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "PSP manual lists Internet Search under Network."
+  },
+  {
+    "app": "Online Instruction Manuals",
+    "category": "Support / manual",
+    "platforms": {
+      "psp": "Built-in"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "Listed in PSP manual under Network."
+  },
+  {
+    "app": "PlayStation Store",
+    "category": "Store",
+    "platforms": {
+      "psp": "Released",
+      "ps_vita": "Bundled",
+      "ps3": "Bundled",
+      "ps4": "Bundled",
+      "ps5": "Bundled"
+    },
+    "availabilityRegion": "All PSN regions",
+    "overallStatus": "Active on PS4/PS5; legacy on PSP/Vita/PS3",
+    "documentationLevel": "Sony manual / archived Sony page",
+    "notes": "PSP manual lists PlayStation Store; archived Vita page lists PlayStation Store."
+  },
+  {
+    "app": "Go!Messenger",
+    "category": "Communication",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "SCEE / Europe",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "SIE press release",
+    "notes": "Wireless communications package for PSP with video chat, voice chat and instant messaging."
+  },
+  {
+    "app": "Go!View",
+    "category": "Video service",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "Europe / UK and Ireland focus",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Press/news documented",
+    "notes": "Official PSP video download service in Europe created by Sony/Sky."
+  },
+  {
+    "app": "Go!Explore",
+    "category": "Navigation / GPS",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "Europe / selected markets",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "SIE press release",
+    "notes": "In-car and pedestrian GPS navigation application for PSP."
+  },
+  {
+    "app": "Go!Edit / Go!Cam editor",
+    "category": "Camera / photo/video editing",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "Europe/PAL regions",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Press/news documented",
+    "notes": "Editing software associated with the PSP Go!Cam camera accessory."
+  },
+  {
+    "app": "x-Radar Portable",
+    "category": "Map / location",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Catalog",
+    "notes": "Japan-only PSP app listed in public PSP software history/catalogs."
+  },
+  {
+    "app": "1seg TV tuner application",
+    "category": "TV",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Catalog",
+    "notes": "Japan-only PSP TV tuner functionality/app."
+  },
+  {
+    "app": "Invizimals: Hidden Challenges",
+    "category": "AR / companion",
+    "platforms": {
+      "psp": "Released",
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "CL, BH, CY, DK, FI, IS, IL, LB, MT, NO, OM, PL, RO, SE, UK, ZA",
+    "overallStatus": "Released",
+    "documentationLevel": "Catalog",
+    "notes": "Listed as PSP archaic and PS Vita assorted app."
+  },
+  {
+    "app": "UMD registration application",
+    "category": "Utility",
+    "platforms": {
+      "psp": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Catalog",
+    "notes": "Listed under PSP archaic applications."
+  },
+  {
+    "app": "Netflix",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Active on PS3/PS4/PS5; discontinued on Vita",
+    "documentationLevel": "Archived Sony page + catalog + PS5 official",
+    "notes": "Archived Vita page lists Netflix; PS5 entertainment page lists Netflix."
+  },
+  {
+    "app": "Redbox Instant by Verizon",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Discontinued"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Redbox Instant; service discontinued."
+  },
+  {
+    "app": "Hulu / Hulu Plus",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "US / all regions per catalog",
+    "overallStatus": "Active on PS4/PS5 in supported regions",
+    "documentationLevel": "Archived Sony page + PS5 official",
+    "notes": "Archived Vita page lists Hulu Plus; PS5 entertainment page lists Hulu."
+  },
+  {
+    "app": "Crackle",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Discontinued"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued on listed PS platforms",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Crackle."
+  },
+  {
+    "app": "Crunchyroll",
+    "category": "Video streaming / anime",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active on PS4/PS5",
+    "documentationLevel": "Archived Sony page + PS5 official",
+    "notes": "Archived Vita page lists Crunchyroll; PS5 entertainment page lists Crunchyroll."
+  },
+  {
+    "app": "Qello Concerts",
+    "category": "Video streaming / music",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "Broad SCEA/SCEE availability",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Qello."
+  },
+  {
+    "app": "NHL GameCenter Live / NHL.tv",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "SCEA regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists NHL GameCenter Live."
+  },
+  {
+    "app": "NBA / NBA Game Time",
+    "category": "Sports",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "SCEJ/SCEK/SCEAsia/SCEA regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists NBA Game Time."
+  },
+  {
+    "app": "YouTube / YouTube TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active on PS4/PS5",
+    "documentationLevel": "Archived Sony page + PS5 official",
+    "notes": "Archived Vita page lists YouTube; PS5 entertainment page lists YouTube."
+  },
+  {
+    "app": "TuneIn Radio",
+    "category": "Music / radio",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions except JP and FI per catalog",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists TuneIn Radio."
+  },
+  {
+    "app": "Colors!",
+    "category": "Drawing / creative",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "CA, US",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Colors! painting application."
+  },
+  {
+    "app": "Facebook",
+    "category": "Social",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Facebook app."
+  },
+  {
+    "app": "LiveTweet / Twitter",
+    "category": "Social",
+    "platforms": {
+      "ps_vita": "Discontinued"
+    },
+    "availabilityRegion": "SCEJ/SCEK/SCEAsia/SCEE and BR, CA, MX, US",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Twitter/LiveTweet."
+  },
+  {
+    "app": "Flickr",
+    "category": "Photo sharing",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "SCEJ/SCEK/SCEAsia/SCEE and BR, CA, MX, US",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Flickr."
+  },
+  {
+    "app": "Nico Nico / Niconico",
+    "category": "Video streaming / social",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "HK, JP, TW, US",
+    "overallStatus": "Active/unknown on PS4; discontinued on Vita",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Nico Nico."
+  },
+  {
+    "app": "AR Play",
+    "category": "AR / system",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists AR Play."
+  },
+  {
+    "app": "Near",
+    "category": "Social / location",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page describes Near as a social networking app."
+  },
+  {
+    "app": "Party",
+    "category": "Communication",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy/discontinued on Vita",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Party for text and voice chat."
+  },
+  {
+    "app": "Trophies",
+    "category": "System / profile",
+    "platforms": {
+      "ps_vita": "Bundled",
+      "ps3": "Bundled",
+      "ps4": "Bundled",
+      "ps5": "Bundled"
+    },
+    "availabilityRegion": "All PSN regions",
+    "overallStatus": "Active on current platforms",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Trophies."
+  },
+  {
+    "app": "Group Messaging / Chat",
+    "category": "Communication",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Group Messaging/Chat."
+  },
+  {
+    "app": "Photos & Camera",
+    "category": "Photo / camera",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Photos & Camera."
+  },
+  {
+    "app": "Friends",
+    "category": "Social",
+    "platforms": {
+      "ps_vita": "Bundled",
+      "ps3": "Bundled",
+      "ps4": "Bundled",
+      "ps5": "Bundled"
+    },
+    "availabilityRegion": "All PSN regions",
+    "overallStatus": "Active on current platforms",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Friends."
+  },
+  {
+    "app": "Videos",
+    "category": "Video player",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Videos."
+  },
+  {
+    "app": "Welcome Park",
+    "category": "Tutorial / system",
+    "platforms": {
+      "ps_vita": "Bundled"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Bundled/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Welcome Park as a basic operation tutorial app."
+  },
+  {
+    "app": "Music",
+    "category": "Music player",
+    "platforms": {
+      "psp": "Built-in",
+      "ps_vita": "Bundled",
+      "ps3": "Built-in",
+      "ps4": "Built-in/Media",
+      "ps5": "Media"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Music."
+  },
+  {
+    "app": "Frobisher Says!",
+    "category": "Interactive / mini-app",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Frobisher Says! as an interactive app."
+  },
+  {
+    "app": "Cliff Diving",
+    "category": "AR / interactive",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Cliff Diving."
+  },
+  {
+    "app": "Fireworks",
+    "category": "AR / interactive",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Fireworks."
+  },
+  {
+    "app": "Table Soccer",
+    "category": "AR / interactive",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Table Soccer."
+  },
+  {
+    "app": "Treasure Park",
+    "category": "Puzzle / social",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "SCEE and many SCEA/SCEAsia regions",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Treasure Park."
+  },
+  {
+    "app": "Paint Park",
+    "category": "Drawing / creative",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists Paint Park."
+  },
+  {
+    "app": "Paint Park Plus",
+    "category": "Drawing / creative",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All regions except CO and PE",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Paint Park Plus."
+  },
+  {
+    "app": "T@g / Tag",
+    "category": "AR / creative",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists T@g/Tag."
+  },
+  {
+    "app": "Wake-Up Club",
+    "category": "Alarm / social",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All regions except AR, CL, CO, PE",
+    "overallStatus": "Released/legacy",
+    "documentationLevel": "Archived Sony page + catalog",
+    "notes": "Archived Vita page lists Wake-Up Club."
+  },
+  {
+    "app": "PS Home Arcade",
+    "category": "Arcade / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Archived Sony page",
+    "notes": "Archived Vita page lists PS Home Arcade."
+  },
+  {
+    "app": "3Player",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "IE",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "7plus",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "9Now",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Discontinued"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Discontinued on PS4",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "ABC iview",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "AOL On",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "SCEA regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Amazon Prime Video",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Animax",
+    "category": "Video streaming / anime",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "SCEAsia, JP, selected EU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "AnimeLab",
+    "category": "Video streaming / anime",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued"
+    },
+    "availabilityRegion": "AU, NZ",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Apple TV / MLS Season Pass",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "AXN",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "SCEAsia/SCEA except CA/US plus selected EU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "AXN Sci Fi",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "BG, CZ, HU, IT, PL, RU, SK, UA",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "BBC iPlayer",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "BBC News",
+    "category": "News / video",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "BBC Sport",
+    "category": "Sports / video",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "beIN CONNECT",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "beIN Sports",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AE, BH, FR, KW, LB, OM, SA",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Blim TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "MX",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Blinkbox",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Blockbuster",
+    "category": "Video rental",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "DK, FI, NO, SE",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "BT Sport",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Active/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Channel 4",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Clan / RTVE",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Claro video",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "SCEA except CA and US",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Cinépolis Klic",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "MX",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Dailymotion",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Dansk Filmskat",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "DK",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "DAZN",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Disney+",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "DMM.com",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Active/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "DR TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "DK",
+    "overallStatus": "Active/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "du View",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AE",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "DVDPost",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Planned",
+      "ps4": "Planned",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "BE",
+    "overallStatus": "Planned/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "EA Play",
+    "category": "Subscription / game service",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "ABC/ESPN / ESPN",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Fan Pass / Sky Sport",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NZ",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Film1",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NL",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "FilmBox Live",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Selected EMEA regions",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Filmin",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Filmo TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "FR",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Foxtel Play",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Francetv Sport",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "FR",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Funimation",
+    "category": "Video streaming / anime",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Discontinued"
+    },
+    "availabilityRegion": "CA, IE, UK, US",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Gaiam TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Planned",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "SCEA regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Game One",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "FR",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Gamereactor",
+    "category": "Media / news",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Selected EU/AU/NZ/ZA",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "GoPro Channel",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Max / HBO Max",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active/varies by region",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "HKTV Television",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "HK",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Icflix",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Middle East",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "IGN",
+    "category": "Media / news",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "iHeartRadio",
+    "category": "Music / radio",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US/varied",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Infinity",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "IT",
+    "overallStatus": "Active/unknown on PS4/PS5",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "ipla",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "PL",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "ITVX",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Jook Video",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "FR",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Joysound.TV Plus",
+    "category": "Karaoke / music video",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Kayo Sports",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "LaSexta",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Unknown",
+      "ps3": "Released",
+      "ps4": "Unknown",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Lightbox",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NZ",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Maxdome",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AT, CH, DE",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Mediaset Infinity",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "IT",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "MEO VideoClube",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "PT",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Min Bio",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "DK, FI, NO, SE",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "MLB.tv",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "SCEJ/SCEK/SCEAsia/SCEA",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Movistar+",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "MUBI",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active/unknown on PS4",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Multiplayer.it",
+    "category": "Media / news",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "IT",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "My5",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "myCANAL",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "FR",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "NHK on Demand",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Niconico",
+    "category": "Video streaming / social",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "HK, JP, TW, US",
+    "overallStatus": "Active/unknown on PS4",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "NOS Sport",
+    "category": "Sports / video",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NL",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "NOS",
+    "category": "News / video",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NL",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Now TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "NRK Super",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NO",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "NRK TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NO",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "OCS 100% cinéma séries",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "FR",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Okko Movies HD",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "RU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Paramount+",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Pathé Thuis",
+    "category": "Video rental/streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NL",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Player / TVN",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "PL",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "PlayStation Access",
+    "category": "Media / PlayStation video",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Varied",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "PlayStation Music",
+    "category": "Music",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Varied",
+    "overallStatus": "Discontinued/replaced by Spotify",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "PlayStation Plus",
+    "category": "Subscription / service",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active on current platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Plex",
+    "category": "Media server / streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "SCEA/SCEE regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Plush",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "BE, LU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Pluto TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "SCEA, UK, FR, ES, DE, IT, CH, AT, DK, NO, SK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Pop",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "UK",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Popcornflix",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "radiko.jp",
+    "category": "Radio",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Red Bull TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active/unknown on PS4",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "RTBF",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "BE",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "RTÉ Player",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Planned",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "IE",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "RTVE +tdp",
+    "category": "Sports / video",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "SBS on Demand",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Screambox",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Shomi",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "CA",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Showmax",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ZA",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "SiriusXM",
+    "category": "Music / radio",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "SKAI",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Unknown",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "GR",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Sky Online",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Unknown",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AT, DE, IT",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "SKY PerfecTV! On demand",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "SnagFilms",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Sony Entertainment Television",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Unknown",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "IN, RU, UA",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Sportsnet Now",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "CA",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Spotify",
+    "category": "Music",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Stan",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "AU",
+    "overallStatus": "Active",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "StarzPlay",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Middle East",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "TBS Seikaiisan Selection",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Total Channel",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Tsutaya TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "TV3 / 3alacarta",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "TV Dogatch",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "TV from Sky / Sky Go",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "IE, UK",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Tubi TV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "SCEA regions",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "TV2 Sumo",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NO",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Tvigle",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "RU",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "TVNZ+",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "NZ",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Twitch",
+    "category": "Video streaming / live",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active on PS4/PS5",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "U-Next",
+    "category": "Video streaming",
+    "platforms": {
+      "ps_vita": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "UFC Fight Pass",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Planned",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "Varied",
+    "overallStatus": "Planned/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Vevo",
+    "category": "Music video",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released / via YouTube",
+      "ps5": "YouTube"
+    },
+    "availabilityRegion": "Selected regions",
+    "overallStatus": "Integrated/varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Viaplay",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "DK, FI, NO, SE",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Videoland",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "NL",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "VidZone",
+    "category": "Music video",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "AU, Europe, NZ, US",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "VRV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Vudu",
+    "category": "Video rental/streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "WatchESPN",
+    "category": "Sports streaming",
+    "platforms": {
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Watchever",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "DE",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "WeatherNation",
+    "category": "Weather / video",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Wuaki.tv",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Peacock / WWE",
+    "category": "Video streaming / sports",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "YLE Areena",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "FI",
+    "overallStatus": "Active on newer platforms",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Yomvi / Canal+",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Discontinued",
+      "ps4": "Discontinued",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "ES",
+    "overallStatus": "Discontinued/unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "YuppTV",
+    "category": "Video streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released",
+      "ps5": "Unknown"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Unknown/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; availability is regional and may be outdated."
+  },
+  {
+    "app": "Life with PlayStation",
+    "category": "Information / distributed computing",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued November 2012",
+    "documentationLevel": "Sony manual + PlayStation Blog",
+    "notes": "Sony PS3 manual documents Life with PlayStation and its Folding@home participation; PlayStation Blog announced retirement with PS3 system software 4.30."
+  },
+  {
+    "app": "Folding@home",
+    "category": "Distributed computing",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued November 2012",
+    "documentationLevel": "Sony manual + PlayStation Blog",
+    "notes": "Initially separate PS3 client; later integrated/updated into Life with PlayStation per PS3 manual notes."
+  },
+  {
+    "app": "Photo Gallery",
+    "category": "Photo / gallery",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Sony manual documented",
+    "notes": "Sony PS3 manual says Photo Gallery is downloaded and installed from the Photo category."
+  },
+  {
+    "app": "PlayMemories Studio",
+    "category": "Photo / video editing",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Sony support",
+    "notes": "Sony support says PlayMemories Studio is a free download installable on PS3."
+  },
+  {
+    "app": "PlayStation Home",
+    "category": "Virtual world / social",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Discontinued March 31, 2015",
+    "documentationLevel": "PlayStation Blog",
+    "notes": "PlayStation Blog announced Home open beta and XMB icon under PlayStation Network."
+  },
+  {
+    "app": "PlayStation Vue",
+    "category": "TV streaming",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Discontinued January 30, 2020",
+    "documentationLevel": "PlayStation Blog",
+    "notes": "PlayStation Blog announced Sony would shut down PlayStation Vue on January 30, 2020."
+  },
+  {
+    "app": "Sony Pictures Core",
+    "category": "Video streaming / rental",
+    "platforms": {
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "Selected countries including NL, BE, US, UK, JP, AU, etc.",
+    "overallStatus": "Active",
+    "documentationLevel": "Official PlayStation support",
+    "notes": "Official PlayStation support says Sony Pictures Core streams selected Sony Pictures movies/TV on PS4 and PS5."
+  },
+  {
+    "app": "Apple Music",
+    "category": "Music",
+    "platforms": {
+      "ps5": "Released"
+    },
+    "availabilityRegion": "Supported Apple Music regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Official PS5 entertainment page",
+    "notes": "PS5 entertainment page lists Apple Music on PS5."
+  },
+  {
+    "app": "Discord voice chat",
+    "category": "Communication",
+    "platforms": {
+      "ps5": "Integrated"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Active",
+    "documentationLevel": "Official PS5 entertainment page",
+    "notes": "PS5 entertainment page documents Discord voice chat through PS5 Control Center."
+  },
+  {
+    "app": "SHAREfactory",
+    "category": "Video editing / creation",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Share Factory Studio",
+    "category": "Video editing / creation",
+    "platforms": {
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Catalog / PlayStation product ecosystem",
+    "notes": "PS5 successor to SHAREfactory; included as a user-facing creation app."
+  },
+  {
+    "app": "Live from PlayStation",
+    "category": "Streaming / social",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Legacy/discontinued or integrated",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Media Player",
+    "category": "Media player",
+    "platforms": {
+      "ps3": "Unknown",
+      "ps4": "Released",
+      "ps5": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Current/varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog for PS4/PS5; PS3 status shown as unknown."
+  },
+  {
+    "app": "Headset Companion App",
+    "category": "Audio utility",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "Many SCEA/SCEE regions",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "The Playroom",
+    "category": "Camera / AR",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "All/varied",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog with PlayStation Camera requirement."
+  },
+  {
+    "app": "PlayTV",
+    "category": "TV tuner / DVR",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "AU, Europe, Middle East/NZ selected",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog; requires PlayTV tuner."
+  },
+  {
+    "app": "Torne",
+    "category": "TV tuner / DVR",
+    "platforms": {
+      "ps_vita": "Released",
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Japan TV tuner/DVR ecosystem listed in public catalog."
+  },
+  {
+    "app": "uke-torne",
+    "category": "TV tuner / DVR",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Japan-only Torne-related Vita app listed in catalog."
+  },
+  {
+    "app": "PocketStation",
+    "category": "Utility / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Japan-only Vita app listed in public catalog."
+  },
+  {
+    "app": "naspocket / Network Media Player",
+    "category": "Media player",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "SCEJ/SCEK/SCEAsia/SCEE",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "E-book Reader",
+    "category": "Reader / ebooks",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Japan-only PS Vita E-book Reader listed in public catalog."
+  },
+  {
+    "app": "edyViewer",
+    "category": "Payment / wallet",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Japan-only PS3 edyViewer app listed in catalog."
+  },
+  {
+    "app": "EyeCreate",
+    "category": "Camera / video editing",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "SCEE and CA, HK, KR, SG, TW, US",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "DailyBurn",
+    "category": "Fitness",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "US",
+    "overallStatus": "Legacy/discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Move.me Server",
+    "category": "Developer / motion utility",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "CA, US",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "PixelJunk 4am Live Viewer",
+    "category": "Music / live viewer",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "PlayMemories Online",
+    "category": "Photo / cloud",
+    "platforms": {
+      "ps3": "Released",
+      "ps4": "Released"
+    },
+    "availabilityRegion": "SCEA and selected SCEE/SCEAsia/JP regions",
+    "overallStatus": "Discontinued/legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "PS2 System Data",
+    "category": "Compatibility utility",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "JP, CA, US",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in catalog; for backward-compatible PS3 models."
+  },
+  {
+    "app": "Visualizer",
+    "category": "Music visualizer",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All regions except CO, PE",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Call of Duty Elite Console App",
+    "category": "Companion",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Discontinued",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "adhocParty",
+    "category": "PSP networking utility",
+    "platforms": {
+      "ps3": "Released"
+    },
+    "availabilityRegion": "SCEJ/SCEK/SCEAsia/SCEE and CA/US",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in catalog; PS3 utility for PSP ad hoc play over network."
+  },
+  {
+    "app": "PlayStation FC UEFA Champions League",
+    "category": "Sports / football",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "SCEE regions",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Amnesia World AR",
+    "category": "AR / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "J-Stars VictoryVS AR trial",
+    "category": "AR / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Mobile Suit Gundam Battle Operation Support App",
+    "category": "Companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "MyNBA2K15",
+    "category": "Companion",
+    "platforms": {
+      "ps_vita": "Discontinued"
+    },
+    "availabilityRegion": "SCEA regions",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Photo Kano Kiss AR",
+    "category": "AR / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Resistance: Burning Skies AR Monument Viewer",
+    "category": "AR / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "CA, MX, US",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "Robotics;Notes Elite AR",
+    "category": "AR / companion",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "iKnow!",
+    "category": "Education",
+    "platforms": {
+      "ps_vita": "Released"
+    },
+    "availabilityRegion": "JP",
+    "overallStatus": "Legacy/discontinued unknown",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed in public PlayStation applications catalog."
+  },
+  {
+    "app": "360Channel VR",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "anywhereVR",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "Jaunt VR",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "Littlstar VR Cinema",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "NewsVR",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "SculptrVR",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "Within",
+    "category": "Virtual Reality",
+    "platforms": {
+      "ps4": "Released"
+    },
+    "availabilityRegion": "PS VR regions",
+    "overallStatus": "Legacy/current varies",
+    "documentationLevel": "Public catalog",
+    "notes": "Listed under Virtual Reality applications in public PlayStation applications catalog."
+  },
+  {
+    "app": "PlayStation App",
+    "category": "Mobile companion",
+    "platforms": {
+      "ps4": "Companion via mobile",
+      "ps5": "Companion via mobile"
+    },
+    "availabilityRegion": "All regions except Nigeria per catalog",
+    "overallStatus": "Active",
+    "documentationLevel": "Official PlayStation/catalog",
+    "notes": "Mobile app companion for PS4/PS5; not a console app."
+  },
+  {
+    "app": "PS4 Second Screen",
+    "category": "Mobile companion",
+    "platforms": {
+      "ps4": "Companion via mobile"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Catalog",
+    "notes": "Mobile app companion for PS4; not a console app."
+  },
+  {
+    "app": "PS Remote Play",
+    "category": "Remote play / companion",
+    "platforms": {
+      "ps4": "Companion via mobile/PC/Mac",
+      "ps5": "Companion via mobile/PC/Mac"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Official/catalog",
+    "notes": "Remote Play app on mobile/PC/Mac for PS4/PS5; not a console app."
+  },
+  {
+    "app": "Content Manager Assistant",
+    "category": "PC/Mac utility",
+    "platforms": {
+      "ps_vita": "Companion via PC/Mac"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Legacy",
+    "documentationLevel": "Catalog",
+    "notes": "PC/Mac utility for PS Vita content management; not a Vita console app."
+  },
+  {
+    "app": "DualSense Firmware Updater",
+    "category": "PC utility",
+    "platforms": {
+      "ps5": "Accessory PC utility"
+    },
+    "availabilityRegion": "All regions",
+    "overallStatus": "Active",
+    "documentationLevel": "Catalog",
+    "notes": "PC utility for DualSense firmware; not a console app."
+  }
+]

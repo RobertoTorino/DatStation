@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <queries>
+        <package android:name="com.scee.psxandroid" />
+        <package android:name="com.playstation.remoteplay" />
+        <package android:name="org.ppsspp.ppssppgold" />
+        <package android:name="org.ppsspp.ppsspp" />
+        <package android:name="com.github.stenzek.duckstation" />
+        <package android:name="xyz.aethersx2.android" />
+        <package android:name="org.vita3k.emulator" />
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DatStation">
+        <activity
+            android:name="com.robertotorino.datstation.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DatStation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.robertotorino.datstation.AppCatalogActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DatStation" />
+        <activity
+            android:name="com.robertotorino.datstation.SystemSoftwareActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DatStation" />
+        <activity
+            android:name="com.robertotorino.datstation.SystemSoftwareHistoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DatStation" />
+    </application>
+</manifest>
