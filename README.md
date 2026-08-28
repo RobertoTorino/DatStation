@@ -30,6 +30,9 @@ Lightweight Android App with database that contains ID's:
 2. Neon Disc - finish the challenge and beat the corrupt discs.
 3. Knowledge Quiz - test your PlayStation knowledge.
 
+---
+
+# Development
 
 ### ADB
 
