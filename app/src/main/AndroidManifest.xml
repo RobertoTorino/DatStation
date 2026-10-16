@@ -23,9 +23,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DatStation">
+        <!-- The mini games are laid out for portrait; locking it also keeps a running game alive. -->
         <activity
             android:name="com.robertotorino.datstation.MainActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.DatStation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -73,6 +73,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -82,6 +83,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.ClipEntry
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -98,9 +100,9 @@ import com.robertotorino.datstation.GameRepository
 import com.robertotorino.datstation.GameResult
 import com.robertotorino.datstation.R
 import com.robertotorino.datstation.ui.theme.DataStationTheme
-import kotlinx.coroutines.Dispatchers
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.robertotorino.datstation.FilterLabels
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 private fun statusKeyForTotal(total: Int): String = when {
     total >= 500 -> "Diamond"
@@ -135,6 +137,7 @@ fun GameFinderApp(
     onEventToggle: () -> Unit = {}
 ) {
     val context = LocalContext.current
+    val resources = LocalResources.current
     val clipboard = LocalClipboard.current
     val coroutineScope = rememberCoroutineScope()
 
@@ -145,40 +148,33 @@ fun GameFinderApp(
     val filterHave = stringResource(R.string.filter_have)
 
     val prefs = context.getSharedPreferences("user_status", Context.MODE_PRIVATE)
-    var userStatusKey by remember {
+    var userStatusKey by rememberSaveable {
         mutableStateOf(prefs.getString("current_status", "None") ?: "None")
     }
     val userStatus = stringResource(statusLabelRes(userStatusKey))
 
-    var showStatusDialog by remember { mutableStateOf<String?>(null) }
-    var showLargeStatus by remember { mutableStateOf(false) }
-    var showHelpDialog by remember { mutableStateOf(false) }
-    var showHistoryDialog by remember { mutableStateOf(false) }
-    var showAboutDialog by remember { mutableStateOf(false) }
-    var showThemeDialog by remember { mutableStateOf(false) }
-    var showCharSelection by remember { mutableStateOf(false) }
-    var showProfilesDialog by remember { mutableStateOf(false) }
-    var showIndividualProfile by remember { mutableStateOf<String?>(null) }
+    var showStatusDialog by rememberSaveable { mutableStateOf<String?>(null) }
+    var showLargeStatus by rememberSaveable { mutableStateOf(false) }
+    var showHelpDialog by rememberSaveable { mutableStateOf(false) }
+    var showHistoryDialog by rememberSaveable { mutableStateOf(false) }
+    var showAboutDialog by rememberSaveable { mutableStateOf(false) }
+    var showThemeDialog by rememberSaveable { mutableStateOf(false) }
+    var showCharSelection by rememberSaveable { mutableStateOf(false) }
+    var showProfilesDialog by rememberSaveable { mutableStateOf(false) }
+    var showIndividualProfile by rememberSaveable { mutableStateOf<String?>(null) }
     var onboardingVideoResId by remember { mutableStateOf<Int?>(null) }
 
-    var searchQuery by remember { mutableStateOf("") }
-    var platformOptions by remember { mutableStateOf(listOf(filterAll, filterFavorites, filterHave)) }
-    var regionOptions by remember { mutableStateOf(listOf(filterAll)) }
-    var selectedPlatform by remember { mutableStateOf(filterAll) }
-    var selectedRegion by remember { mutableStateOf(filterAll) }
-    var searchResults by remember { mutableStateOf(listOf<GameResult>()) }
+    val vm: GameFinderViewModel = viewModel {
+        GameFinderViewModel(repository, FilterLabels(filterAll, filterFavorites, filterHave))
+    }
     var platformExpanded by remember { mutableStateOf(false) }
     var regionExpanded by remember { mutableStateOf(false) }
-    var showInfoDialog by remember { mutableStateOf(false) }
-    var showStatsDialog by remember { mutableStateOf(false) }
-    var globalStats by remember { mutableStateOf<Map<String, Int>>(emptyMap()) }
-    var randomGame by remember { mutableStateOf<GameResult?>(null) }
+    var showInfoDialog by rememberSaveable { mutableStateOf(false) }
+    var showStatsDialog by rememberSaveable { mutableStateOf(false) }
 
     var showSettingsMenu by remember { mutableStateOf(false) }
     val sheetState = rememberModalBottomSheetState()
 
-    var distFilter by remember { mutableStateOf(filterAll) }
-    var typeFilter by remember { mutableStateOf(filterAll) }
 
     val filterOptions = listOf(
         filterAll,
@@ -301,8 +297,44 @@ fun GameFinderApp(
         }
     }
 
+    suspend fun runSearch() {
+        val result = vm.search()
+        val message = when {
+            result.games.isEmpty() -> resources.getString(R.string.no_results)
+            vm.searchQuery.isBlank() -> {
+                val totalCount = when (vm.selectedPlatform) {
+                    filterAll -> vm.globalStats["TOTAL"] ?: 0
+                    else -> vm.globalStats[vm.selectedPlatform] ?: result.games.size
+                }
+                resources.getString(R.string.random_results, totalCount)
+            }
+            result.truncated -> resources.getString(R.string.results_capped, result.games.size)
+            else -> resources.getString(R.string.found_results, result.games.size)
+        }
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    suspend fun toggleGame(game: GameResult, favorite: Boolean) {
+        val wasSet = if (favorite) game.isFavorite else game.isHave
+        val total = vm.toggle(game, favorite)
+        val messageRes = when {
+            favorite && !wasSet -> R.string.added_to_favorites
+            favorite -> R.string.removed_from_favorites
+            !wasSet -> R.string.added_to_collection
+            else -> R.string.removed_from_collection
+        }
+        Toast.makeText(context, resources.getString(messageRes), Toast.LENGTH_SHORT).show()
+
+        val newStatusKey = statusKeyForTotal(total)
+        if (newStatusKey != userStatusKey) {
+            userStatusKey = newStatusKey
+            prefs.edit { putString("current_status", newStatusKey) }
+            if (newStatusKey != "None") showStatusDialog = newStatusKey
+        }
+    }
+
     LaunchedEffect(Unit) {
-        val total = withContext(Dispatchers.IO) { repository.getTotalUserItems() }
+        val total = vm.totalUserItems()
         val calculatedStatus = statusKeyForTotal(total)
 
         if (userStatusKey != calculatedStatus) {
@@ -310,7 +342,7 @@ fun GameFinderApp(
             prefs.edit { putString("current_status", calculatedStatus) }
         }
 
-        val savedChar = withContext(Dispatchers.IO) { repository.getUserProfileValue("user_character") }
+        val savedChar = vm.userProfileValue("user_character")
         if (savedChar == null) {
             showCharSelection = true
         }
@@ -353,49 +385,16 @@ fun GameFinderApp(
                     command.contains("quiz") -> onOpenQuiz()
 
                     else -> {
-                        searchQuery = spokenText
-                        coroutineScope.launch {
-                            withContext(Dispatchers.IO) {
-                                searchResults = repository.searchGames(
-                                    searchQuery,
-                                    platformOptions.filter { it != filterAll && it != filterFavorites && it != filterHave },
-                                    selectedPlatform,
-                                    selectedRegion,
-                                    distFilter,
-                                    typeFilter,
-                                    filterAll,
-                                    filterFavorites,
-                                    filterHave
-                                )
-                            }
-                            Toast.makeText(
-                                context,
-                                if (searchResults.isEmpty()) context.getString(R.string.no_results) else context.getString(
-                                    R.string.found_results,
-                                    searchResults.size
-                                ),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                        vm.searchQuery = spokenText
+                        coroutineScope.launch { runSearch() }
                     }
                 }
             }
         }
     }
 
-    LaunchedEffect(Unit) {
-        withContext(Dispatchers.IO) {
-            val platforms = repository.getTablesWithColumns()
-            val regions = repository.getAllRegions(platforms)
-            platformOptions = listOf(filterAll, filterFavorites, filterHave) + platforms
-            regionOptions = listOf(filterAll) + regions
-            randomGame = repository.getRandomGame(platforms)
-            globalStats = repository.getGlobalStats(platforms)
-        }
-    }
-
     if (showStatsDialog) {
-        StatsDialog(stats = globalStats, onDismiss = { showStatsDialog = false })
+        StatsDialog(stats = vm.globalStats, onDismiss = { showStatsDialog = false })
     }
 
     if (showInfoDialog) RegionCodesInfoDialog(onDismiss = { showInfoDialog = false })
@@ -431,9 +430,7 @@ fun GameFinderApp(
     if (showCharSelection) {
         CharacterSelectionDialog { choice ->
             coroutineScope.launch {
-                withContext(Dispatchers.IO) {
-                    repository.setUserProfileValue("user_character", choice)
-                }
+                vm.setUserProfileValue("user_character", choice)
                 showCharSelection = false
                 
                 // Trigger onboarding video
@@ -458,9 +455,7 @@ fun GameFinderApp(
         CharacterProfilesDialog(
             onSelectionChange = { newChar ->
                 coroutineScope.launch {
-                    withContext(Dispatchers.IO) {
-                        repository.setUserProfileValue("user_character", newChar)
-                    }
+                    vm.setUserProfileValue("user_character", newChar)
                 }
             },
             onViewProfile = { character ->
@@ -579,8 +574,8 @@ fun GameFinderApp(
             // Search spans columns 1 and 2
             Box(modifier = Modifier.weight(2f)) {
                 OutlinedTextField(
-                    value = searchQuery,
-                    onValueChange = { searchQuery = it },
+                    value = vm.searchQuery,
+                    onValueChange = { vm.searchQuery = it },
                     placeholder = { 
                         Text(
                             text = stringResource(R.string.search_placeholder),
@@ -603,7 +598,7 @@ fun GameFinderApp(
                                 )
                                 putExtra(
                                     RecognizerIntent.EXTRA_PROMPT,
-                                    context.getString(R.string.search_placeholder)
+                                    resources.getString(R.string.search_placeholder)
                                 )
                             }
                             try {
@@ -631,23 +626,7 @@ fun GameFinderApp(
                     icon = Icons.Default.RestartAlt,
                     contentDescription = stringResource(R.string.clear_button),
                     size = 56.dp, 
-                    onClick = {
-                        searchQuery = ""
-                        selectedPlatform = filterAll
-                        selectedRegion = filterAll
-                        distFilter = filterAll
-                        typeFilter = filterAll
-                        searchResults = emptyList()
-                        coroutineScope.launch {
-                            withContext(Dispatchers.IO) {
-                                randomGame = repository.getRandomGame(
-                                    platformOptions.filter {
-                                        it != filterAll && it != filterFavorites && it != filterHave
-                                    }
-                                )
-                            }
-                        }
-                    }
+                    onClick = { vm.reset() }
                 )
 
                 StatusIcon(
@@ -682,7 +661,7 @@ fun GameFinderApp(
                 modifier = Modifier.weight(1f)
             ) {
                 OutlinedTextField(
-                    value = selectedPlatform,
+                    value = vm.selectedPlatform,
                     onValueChange = {},
                     readOnly = true,
                     placeholder = { Text(stringResource(R.string.platform_label), fontSize = 10.sp) },
@@ -705,7 +684,7 @@ fun GameFinderApp(
                         .background(currentColors.boxBackground)
                         .border(1.dp, currentColors.boxBorder, RoundedCornerShape(AppCornerRadius))
                 ) {
-                    platformOptions.forEach {
+                    vm.platformOptions.forEach {
                         DropdownMenuItem(
                             text = {
                                 Text(
@@ -714,7 +693,7 @@ fun GameFinderApp(
                                     fontSize = 11.sp
                                 )
                             },
-                            onClick = { selectedPlatform = it; platformExpanded = false },
+                            onClick = { vm.selectedPlatform = it; platformExpanded = false },
                             modifier = Modifier.height(32.dp),
                             contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
                         )
@@ -727,7 +706,7 @@ fun GameFinderApp(
                 modifier = Modifier.weight(1f)
             ) {
                 OutlinedTextField(
-                    value = selectedRegion,
+                    value = vm.selectedRegion,
                     onValueChange = {},
                     readOnly = true,
                     placeholder = { Text(stringResource(R.string.region_label), fontSize = 10.sp) },
@@ -750,7 +729,7 @@ fun GameFinderApp(
                         .background(currentColors.boxBackground)
                         .border(1.dp, currentColors.boxBorder, RoundedCornerShape(AppCornerRadius))
                 ) {
-                    regionOptions.forEach {
+                    vm.regionOptions.forEach {
                         DropdownMenuItem(
                             text = {
                                 Text(
@@ -759,7 +738,7 @@ fun GameFinderApp(
                                     fontSize = 11.sp
                                 )
                             },
-                            onClick = { selectedRegion = it; regionExpanded = false },
+                            onClick = { vm.selectedRegion = it; regionExpanded = false },
                             modifier = Modifier.height(32.dp),
                             contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
                         )
@@ -772,8 +751,8 @@ fun GameFinderApp(
                 onExpandedChange = { filterExpanded = !filterExpanded },
                 modifier = Modifier.weight(1f)
             ) {
-                val currentFilter = if (typeFilter != filterAll) typeFilter else distFilter
-                val labelText = if (distFilter == filterAll && typeFilter == filterAll) {
+                val currentFilter = if (vm.typeFilter != filterAll) vm.typeFilter else vm.distFilter
+                val labelText = if (vm.distFilter == filterAll && vm.typeFilter == filterAll) {
                     "-"
                 } else {
                     filterLabels[currentFilter] ?: currentFilter
@@ -816,16 +795,16 @@ fun GameFinderApp(
                             onClick = {
                                 when (option) {
                                     filterAll -> {
-                                        distFilter = filterAll
-                                        typeFilter = filterAll
+                                        vm.distFilter = filterAll
+                                        vm.typeFilter = filterAll
                                     }
                                     "DISC", "PSN" -> {
-                                        distFilter = option
-                                        typeFilter = filterAll
+                                        vm.distFilter = option
+                                        vm.typeFilter = filterAll
                                     }
                                     else -> {
-                                        typeFilter = option
-                                        distFilter = filterAll
+                                        vm.typeFilter = option
+                                        vm.distFilter = filterAll
                                     }
                                 }
                                 filterExpanded = false
@@ -848,40 +827,7 @@ fun GameFinderApp(
             CompactToolButton(
                 icon = Icons.Default.Search,
                 contentDescription = stringResource(R.string.search_placeholder),
-                onClick = {
-                    coroutineScope.launch {
-                        withContext(Dispatchers.IO) {
-                            searchResults = repository.searchGames(
-                                searchQuery,
-                                platformOptions.filter {
-                                    it != filterAll && it != filterFavorites && it != filterHave
-                                },
-                                selectedPlatform,
-                                selectedRegion,
-                                distFilter,
-                                typeFilter,
-                                filterAll,
-                                filterFavorites,
-                                filterHave
-                            )
-                        }
-                        
-                        val isRandom = searchQuery.isBlank()
-                        val message = if (searchResults.isEmpty()) {
-                            context.getString(R.string.no_results)
-                        } else if (isRandom) {
-                            val totalCount = when (selectedPlatform) {
-                                filterAll -> globalStats["TOTAL"] ?: 0
-                                else -> globalStats[selectedPlatform] ?: searchResults.size // Fallback
-                            }
-                            context.getString(R.string.random_results, totalCount)
-                        } else {
-                            context.getString(R.string.found_results, searchResults.size)
-                        }
-                        
-                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-                    }
-                }
+                onClick = { coroutineScope.launch { runSearch() } }
             )
 
             CompactToolButton(
@@ -994,7 +940,7 @@ fun GameFinderApp(
 
         Spacer(modifier = Modifier.height(6.dp))
 
-        if (searchResults.isEmpty() && randomGame != null) {
+        if (vm.searchResults.isEmpty() && vm.randomGame != null) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -1041,7 +987,7 @@ fun GameFinderApp(
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { searchResults = listOf(randomGame!!) },
+                        .clickable { vm.showFeaturedGame() },
                     shape = RoundedCornerShape(AppCornerRadius),
                     colors = CardDefaults.cardColors(
                         containerColor = currentColors.cardBackground,
@@ -1050,7 +996,7 @@ fun GameFinderApp(
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text(
-                            text = randomGame!!.gameTitle,
+                            text = vm.randomGame!!.gameTitle,
                             style = MaterialTheme.typography.titleLarge,
                             color = currentColors.textPrimary,
                             textAlign = TextAlign.Center,
@@ -1058,7 +1004,7 @@ fun GameFinderApp(
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = "${randomGame!!.table} | ${randomGame!!.region} | ${randomGame!!.titleId}",
+                            text = "${vm.randomGame!!.table} | ${vm.randomGame!!.region} | ${vm.randomGame!!.titleId}",
                             style = MaterialTheme.typography.bodyMedium,
                             color = currentColors.accent,
                             textAlign = TextAlign.Center,
@@ -1075,10 +1021,10 @@ fun GameFinderApp(
             }
         }
 
-        val filteredResults = searchResults.filter { game ->
-            (distFilter == filterAll || game.distribution.contains(distFilter, ignoreCase = true)) &&
-                    (typeFilter == filterAll || game.contentType.contains(
-                        typeFilter,
+        val filteredResults = vm.searchResults.filter { game ->
+            (vm.distFilter == filterAll || game.distribution.contains(vm.distFilter, ignoreCase = true)) &&
+                    (vm.typeFilter == filterAll || game.contentType.contains(
+                        vm.typeFilter,
                         ignoreCase = true
                     ))
         }
@@ -1124,14 +1070,14 @@ fun GameFinderApp(
                                             clipboard.setClipEntry(
                                                 ClipEntry(
                                                     ClipData.newPlainText(
-                                                        context.getString(R.string.clip_label_game_id),
+                                                        resources.getString(R.string.clip_label_game_id),
                                                         game.titleId
                                                     )
                                                 )
                                             )
                                             Toast.makeText(
                                                 context,
-                                                context.getString(R.string.id_copied, game.titleId),
+                                                resources.getString(R.string.id_copied, game.titleId),
                                                 Toast.LENGTH_SHORT
                                             ).show()
                                         }
@@ -1178,14 +1124,14 @@ fun GameFinderApp(
                                                 clipboard.setClipEntry(
                                                     ClipEntry(
                                                         ClipData.newPlainText(
-                                                            context.getString(R.string.clip_label_game_url),
+                                                            resources.getString(R.string.clip_label_game_url),
                                                             game.url
                                                         )
                                                     )
                                                 )
                                                 Toast.makeText(
                                                     context,
-                                                    context.getString(R.string.url_copied),
+                                                    resources.getString(R.string.url_copied),
                                                     Toast.LENGTH_SHORT
                                                 ).show()
                                             }
@@ -1196,7 +1142,7 @@ fun GameFinderApp(
                                     color = currentColors.accent,
                                     style = MaterialTheme.typography.labelSmall,
                                     modifier = Modifier.clickable {
-                                        val shareText = context.getString(
+                                        val shareText = resources.getString(
                                             R.string.share_format,
                                             game.gameTitle,
                                             game.titleId,
@@ -1225,35 +1171,7 @@ fun GameFinderApp(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             IconButton(
-                                onClick = {
-                                    coroutineScope.launch {
-                                        val wasHave = game.isHave
-                                        withContext(Dispatchers.IO) { repository.toggleHave(game) }
-                                        searchResults = searchResults.map {
-                                            if (it.titleId == game.titleId && it.table == game.table) it.copy(
-                                                isHave = !wasHave
-                                            ) else it
-                                        }
-                                        Toast.makeText(
-                                            context,
-                                            if (!wasHave) context.getString(R.string.added_to_collection) else context.getString(
-                                                R.string.removed_from_collection
-                                            ),
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-
-                                        val total =
-                                            withContext(Dispatchers.IO) { repository.getTotalUserItems() }
-                                        val newStatusKey = statusKeyForTotal(total)
-                                        val currentKey =
-                                            prefs.getString("current_status", "None") ?: "None"
-                                        if (newStatusKey != currentKey) {
-                                            userStatusKey = newStatusKey
-                                            prefs.edit { putString("current_status", newStatusKey) }
-                                            if (newStatusKey != "None") showStatusDialog = newStatusKey
-                                        }
-                                    }
-                                },
+                                onClick = { coroutineScope.launch { toggleGame(game, favorite = false) } },
                                 modifier = Modifier.size(32.dp)
                             ) {
                                 Icon(
@@ -1264,35 +1182,7 @@ fun GameFinderApp(
                                 )
                             }
                             IconButton(
-                                onClick = {
-                                    coroutineScope.launch {
-                                        val wasFavorite = game.isFavorite
-                                        withContext(Dispatchers.IO) { repository.toggleFavorite(game) }
-                                        searchResults = searchResults.map {
-                                            if (it.titleId == game.titleId && it.table == game.table) it.copy(
-                                                isFavorite = !wasFavorite
-                                            ) else it
-                                        }
-                                        Toast.makeText(
-                                            context,
-                                            if (!wasFavorite) context.getString(R.string.added_to_favorites) else context.getString(
-                                                R.string.removed_from_favorites
-                                            ),
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-
-                                        val total =
-                                            withContext(Dispatchers.IO) { repository.getTotalUserItems() }
-                                        val newStatusKey = statusKeyForTotal(total)
-                                        val currentKey =
-                                            prefs.getString("current_status", "None") ?: "None"
-                                        if (newStatusKey != currentKey) {
-                                            userStatusKey = newStatusKey
-                                            prefs.edit { putString("current_status", newStatusKey) }
-                                            if (newStatusKey != "None") showStatusDialog = newStatusKey
-                                        }
-                                    }
-                                },
+                                onClick = { coroutineScope.launch { toggleGame(game, favorite = true) } },
                                 modifier = Modifier.size(32.dp)
                             ) {
                                 Icon(
@@ -1409,16 +1299,3 @@ private fun launchApp(context: Context, packageName: String): Boolean {
     }
 }
 
-@Preview(name = "English", locale = "en")
-@Preview(name = "Spanish", locale = "es")
-@Preview(name = "Chinese", locale = "zh")
-@Preview(name = "Russian", locale = "ru")
-@Composable
-fun GameFinderScreenPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            // Placeholder preview container
-        }
-    }
-}

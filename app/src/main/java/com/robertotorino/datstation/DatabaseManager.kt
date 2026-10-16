@@ -5,156 +5,165 @@ import android.content.Context
 import android.provider.Settings.Secure.ANDROID_ID
 import android.provider.Settings.Secure.getString
 import android.util.Log
-import androidx.room.Database
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.core.content.edit
 import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.sqlite.db.SupportSQLiteOpenHelper
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import java.io.File
+import java.io.IOException
 
-@Entity(tableName = "dummy_table")
-data class DummyEntity(@PrimaryKey val id: Int)
-
-@Database(entities = [DummyEntity::class], version =87, exportSchema = false)
-abstract class AppDatabase : RoomDatabase()
-
+/**
+ * Opens the read-only game catalogue shipped in assets and attaches the
+ * encrypted, per-device `user_data.db` that holds favorites, collection,
+ * scores, trophies and profile values.
+ *
+ * The catalogue is copied out of the APK once. The size of the asset at copy
+ * time is remembered in SharedPreferences; when a new APK ships a different
+ * asset the local copy is replaced. Comparing against the recorded size (and
+ * not against the local file) matters because SQLite may grow the local file
+ * on its own, which must not trigger a 63 MB re-copy on every launch.
+ */
 object DatabaseManager {
-    private var dbInstance: SupportSQLiteDatabase? = null
     private const val TAG = "DatabaseManager"
+    private const val MAIN_DB_NAME = "datstation.db"
+    private const val USER_DB_NAME = "user_data.db"
+    private const val PREFS_NAME = "database_prefs"
+    private const val KEY_COPIED_ASSET_SIZE = "copied_asset_size"
 
-    @SuppressLint("HardwareIds")
-    private fun getEncryptionKey(context: Context): ByteArray {
-        // Use ANDROID_ID as a base for the encryption key to bind data to this device
-        val androidId = getString(context.contentResolver, ANDROID_ID)
-        return androidId?.toByteArray() ?: "default_key".toByteArray()
-    }
+    @Volatile
+    private var dbInstance: SupportSQLiteDatabase? = null
 
     /**
-     * Automatically detects if the datstation.db file in assets is different (by size)
-     * from the one currently installed on the device. If it is, we delete the
-     * local copy to force Room to copy the new one from assets.
+     * Returns the shared open database, opening it on first use. This does
+     * file copying and native library loading, so call it off the main thread.
      */
-    private fun forceUpdateIfAssetChanged(context: Context) {
-        val dbFile = context.getDatabasePath("datstation.db")
-        if (!dbFile.exists()) return
-
-        try {
-            val assetSize = context.assets.open("datstation.db").use { it.available().toLong() }
-            if ((dbFile.length() != assetSize) && assetSize > 0) {
-                Log.d(TAG, "Database asset update detected. Refreshing local database...")
-                context.deleteDatabase("datstation.db")
-            }
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to check database asset size", e)
-        }
-    }
-
+    @Synchronized
     fun getDatabase(context: Context): SupportSQLiteDatabase {
-        if (dbInstance == null || !dbInstance!!.isOpen) {
-            try {
-                Log.d(TAG, "Initializing database...")
+        dbInstance?.takeIf { it.isOpen }?.let { return it }
 
-                // Initialize SQLCipher
-                SQLiteDatabase.loadLibs(context)
+        val appContext = context.applicationContext
+        try {
+            Log.d(TAG, "Initializing database...")
+            SQLiteDatabase.loadLibs(appContext)
+            copyCatalogueIfNeeded(appContext)
 
-                // 1. Force update if the file in assets has changed
-                forceUpdateIfAssetChanged(context)
-
-                // 2. Open the main database with NO password 
-                // This allows you to use plain SQLite files from your other repo
-                val factory = SupportFactory("".toByteArray())
-
-                val roomDb = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "datstation.db",
-                )
-                    .createFromAsset("datstation.db")
-                    .openHelperFactory(factory)
-                    .fallbackToDestructiveMigration(dropAllTables = true)
+            // The catalogue itself is a plain SQLite file, so it is opened with an empty key.
+            val helper = SupportFactory("".toByteArray()).create(
+                SupportSQLiteOpenHelper.Configuration.builder(appContext)
+                    .name(MAIN_DB_NAME)
+                    .callback(CatalogueCallback)
                     .build()
+            )
+            val db = helper.writableDatabase
+            attachUserData(appContext, db)
 
-                val db = roomDb.openHelper.writableDatabase
-
-                // --- ATTACH PERSISTENT USER DATA ---
-                val userDataFile = context.getDatabasePath("user_data.db")
-                val userDataPath = userDataFile.absolutePath
-
-                // 3. Encrypt ONLY the user_data.db using the ANDROID_ID
-                val passphrase = getEncryptionKey(context)
-                val keyHex = passphrase.joinToString("") { "%02x".format(it) }
-                db.execSQL("ATTACH DATABASE '$userDataPath' AS user_db KEY x'$keyHex'")
-
-                // Ensure favorites table exists in the ATTACHED database
-                db.execSQL(
-                    """
-                    CREATE TABLE IF NOT EXISTS user_db.favorites (
-                        tableName TEXT,
-                        gameId TEXT,
-                        PRIMARY KEY (tableName, gameId)
-                    )
-                """.trimIndent()
-                )
-
-                // Ensure 'have' table exists in the ATTACHED database
-                db.execSQL(
-                    """
-                    CREATE TABLE IF NOT EXISTS user_db.have (
-                        tableName TEXT,
-                        gameId TEXT,
-                        PRIMARY KEY (tableName, gameId)
-                    )
-                """.trimIndent()
-                )
-
-                // Ensure scores table exists in the ATTACHED database
-                db.execSQL(
-                    """
-                    CREATE TABLE IF NOT EXISTS user_db.scores (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        tableName TEXT,
-                        score INTEGER,
-                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-                    )
-                """.trimIndent()
-                )
-
-                // Ensure user_profile table exists
-                db.execSQL(
-                    """
-                    CREATE TABLE IF NOT EXISTS user_db.user_profile (
-                        key TEXT PRIMARY KEY,
-                        value TEXT
-                    )
-                """.trimIndent()
-                )
-
-                // Ensure trophies table exists in the ATTACHED database
-                db.execSQL(
-                    """
-                    CREATE TABLE IF NOT EXISTS user_db.trophies (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        gameName TEXT,
-                        trophyType TEXT,
-                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-                    )
-                """.trimIndent()
-                )
-
-                dbInstance = db
-                Log.d(TAG, "Database opened with encryption and user_data attached.")
-            } catch (e: Exception) {
-                Log.e(TAG, "Error opening database", e)
-                throw e
-            }
+            dbInstance = db
+            Log.d(TAG, "Database opened and user_data attached.")
+            return db
+        } catch (e: Exception) {
+            Log.e(TAG, "Error opening database", e)
+            throw e
         }
-        return dbInstance!!
     }
 
     fun closeDatabase() {
         dbInstance?.close()
         dbInstance = null
+    }
+
+    /** The catalogue is never migrated: a changed asset is copied in whole. */
+    private object CatalogueCallback : SupportSQLiteOpenHelper.Callback(1) {
+        override fun onCreate(db: SupportSQLiteDatabase) = Unit
+        override fun onUpgrade(db: SupportSQLiteDatabase, oldVersion: Int, newVersion: Int) = Unit
+
+        // Copies made by earlier app versions carry Room's schema version; accept them.
+        override fun onDowngrade(db: SupportSQLiteDatabase, oldVersion: Int, newVersion: Int) = Unit
+    }
+
+    private fun copyCatalogueIfNeeded(context: Context) {
+        val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val dbFile = context.getDatabasePath(MAIN_DB_NAME)
+        val assetSize = context.assets.open(MAIN_DB_NAME).use { it.available().toLong() }
+        val copiedSize = prefs.getLong(KEY_COPIED_ASSET_SIZE, -1L)
+
+        if (dbFile.exists() && copiedSize == assetSize) return
+
+        Log.i(TAG, "Copying catalogue from assets (local=${dbFile.exists()}, recorded=$copiedSize, asset=$assetSize)")
+        context.deleteDatabase(MAIN_DB_NAME)
+        dbFile.parentFile?.mkdirs()
+
+        val tempFile = File(dbFile.path + ".tmp")
+        val written = context.assets.open(MAIN_DB_NAME).use { input ->
+            tempFile.outputStream().use { output -> input.copyTo(output) }
+        }
+        if (!tempFile.renameTo(dbFile)) {
+            tempFile.delete()
+            throw IOException("Could not move the copied catalogue into place")
+        }
+        if (written != assetSize) {
+            Log.w(TAG, "Asset reported $assetSize bytes but $written were copied")
+        }
+        prefs.edit { putLong(KEY_COPIED_ASSET_SIZE, assetSize) }
+    }
+
+    @SuppressLint("HardwareIds")
+    private fun getEncryptionKey(context: Context): ByteArray {
+        // ANDROID_ID binds the user data to this device and app signing key.
+        val androidId = getString(context.contentResolver, ANDROID_ID)
+        return androidId?.toByteArray() ?: "default_key".toByteArray()
+    }
+
+    private fun attachUserData(context: Context, db: SupportSQLiteDatabase) {
+        val userDataPath = context.getDatabasePath(USER_DB_NAME).absolutePath
+        val keyHex = getEncryptionKey(context).joinToString("") { "%02x".format(it) }
+        db.execSQL("ATTACH DATABASE '$userDataPath' AS user_db KEY x'$keyHex'")
+
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS user_db.favorites (
+                tableName TEXT,
+                gameId TEXT,
+                PRIMARY KEY (tableName, gameId)
+            )
+            """.trimIndent()
+        )
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS user_db.have (
+                tableName TEXT,
+                gameId TEXT,
+                PRIMARY KEY (tableName, gameId)
+            )
+            """.trimIndent()
+        )
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS user_db.scores (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                tableName TEXT,
+                score INTEGER,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """.trimIndent()
+        )
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS user_db.user_profile (
+                key TEXT PRIMARY KEY,
+                value TEXT
+            )
+            """.trimIndent()
+        )
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS user_db.trophies (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                gameName TEXT,
+                trophyType TEXT,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            """.trimIndent()
+        )
     }
 }

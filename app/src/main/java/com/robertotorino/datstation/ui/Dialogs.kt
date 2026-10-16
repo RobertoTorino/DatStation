@@ -177,68 +177,13 @@ fun LargeStatusDialog(status: String, onDismiss: () -> Unit) {
     )
 }
 
-@Preview(name = "English", locale = "en")
+@Preview(name = "English")
 @Composable
 fun LargeStatusDialogEnglishPreview() {
     DataStationTheme {
         val colors = ClassicTheme
         CompositionLocalProvider(LocalAppColors provides colors) {
             LargeStatusDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Spanish", locale = "es")
-@Composable
-fun LargeStatusDialogSpanishPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            LargeStatusDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Russian", locale = "ru")
-@Composable
-fun LargeStatusDialogRussianPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            LargeStatusDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Chinese", locale = "zh")
-@Composable
-fun LargeStatusDialogChinesePreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            LargeStatusDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Japanese", locale = "ja")
-@Composable
-fun LargeStatusDialogJapanesePreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            LargeStatusDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Spanish", locale = "es")
-@Composable
-fun RegionInfoSpanishPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            RegionCodesInfoDialog(onDismiss = {})
         }
     }
 }
@@ -373,42 +318,9 @@ fun StatusAchievementDialog(status: String, onDismiss: () -> Unit) {
     )
 }
 
-@Preview(name = "Achievement English", locale = "en")
+@Preview(name = "Achievement English")
 @Composable
 fun StatusAchievementDialogEnglishPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            StatusAchievementDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Achievement Russian", locale = "ru")
-@Composable
-fun StatusAchievementDialogRussianPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            StatusAchievementDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Achievement Japanese", locale = "ja")
-@Composable
-fun StatusAchievementDialogJapanesePreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            StatusAchievementDialog(status = "Gold", onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Achievement Chinese", locale = "zh")
-@Composable
-fun StatusAchievementDialogChinesePreview() {
     DataStationTheme {
         val colors = ClassicTheme
         CompositionLocalProvider(LocalAppColors provides colors) {
@@ -514,28 +426,6 @@ fun HelpDialog(onDismiss: () -> Unit) {
         containerColor = colors.cardBackground,
         shape = RoundedCornerShape(AppCornerRadius)
     )
-}
-
-@Preview(name = "Russian", locale = "ru")
-@Composable
-fun HelpDialogRussianPreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            HelpDialog(onDismiss = {})
-        }
-    }
-}
-
-@Preview(name = "Chinese", locale = "zh")
-@Composable
-fun HelpDialogChinesePreview() {
-    DataStationTheme {
-        val colors = ClassicTheme
-        CompositionLocalProvider(LocalAppColors provides colors) {
-            HelpDialog(onDismiss = {})
-        }
-    }
 }
 
 @Composable

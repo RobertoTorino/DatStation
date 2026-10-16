@@ -154,7 +154,8 @@ data class Question(
     val options: List<String>,
     val correctAnswer: String,
     val points: Int = 10,
-    val category: String
+    val category: String,
+    val explanation: String = ""
 )
 
 enum class QuizGameState { SELECTING_CATEGORY, PLAYING, RESULTS, LOADING }
@@ -169,7 +170,8 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
     private val mainDb = DatabaseManager.getDatabase(application)
     private val repository = GameRepository(mainDb)
 
-    private val currentQuestionVersion = 15
+    // Bump whenever assets/questions.json changes so installed apps reload the questions.
+    private val currentQuestionVersion = 16
 
     private val _gameState = MutableStateFlow(QuizGameState.LOADING)
     val gameState: StateFlow<QuizGameState> = _gameState.asStateFlow()
@@ -344,7 +346,7 @@ class QuizViewModel(application: Application) : AndroidViewModel(application) {
     fun submitAnswer(selectedOption: String) {
         val currentQ = _currentQuestion.value ?: return
         if (_feedback.value.first != null || _isPaused.value) return
-        val isCorrect = selectedOption == currentQ.correctAnswer
+        val isCorrect = selectedOption.trim().equals(currentQ.correctAnswer.trim(), ignoreCase = true)
         _feedback.value = selectedOption to isCorrect
         viewModelScope.launch {
             if (isCorrect) {
@@ -873,7 +875,9 @@ fun PlayingScreen(viewModel: QuizViewModel, onShowLargeChar: () -> Unit) {
 
                         if (feedback.first != null) {
                             val sIdx = question.options.indexOf(feedback.first)
-                            val cIdx = question.options.indexOf(question.correctAnswer)
+                            val cIdx = question.options.indexOfFirst {
+                                it.trim().equals(question.correctAnswer.trim(), ignoreCase = true)
+                            }
                             val sLet = ('A' + sIdx).toChar()
                             val cLet = ('A' + cIdx).toChar()
                             
@@ -902,7 +906,7 @@ fun PlayingScreen(viewModel: QuizViewModel, onShowLargeChar: () -> Unit) {
                                             Spacer(modifier = Modifier.width(8.dp))
                                             
                                             val incorrectText = if (question.type == QuestionType.TF) {
-                                                "incorrect: ${question.text}"
+                                                stringResource(R.string.tf_answer_reply, question.correctAnswer)
                                             } else {
                                                 stringResource(R.string.incorrect_answer_reply, sLet)
                                             }
@@ -921,6 +925,15 @@ fun PlayingScreen(viewModel: QuizViewModel, onShowLargeChar: () -> Unit) {
                                                 fontWeight = FontWeight.Bold,
                                                 fontSize = 16.sp,
                                                 textAlign = TextAlign.Center
+                                            )
+                                        }
+                                        if (question.explanation.isNotBlank()) {
+                                            Text(
+                                                question.explanation,
+                                                color = PS_WHITE.copy(alpha = 0.85f),
+                                                fontSize = 14.sp,
+                                                textAlign = TextAlign.Center,
+                                                modifier = Modifier.padding(top = 4.dp)
                                             )
                                         }
                                     }

@@ -12,7 +12,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
-import net.sqlcipher.database.SupportFactory
 import org.json.JSONArray
 
 @Entity(tableName = "questions_table")
@@ -23,6 +22,7 @@ data class QuestionEntity(
     val category: String,
     val optionsJson: String,
     val correctAnswer: String,
+    val explanation: String = "",
     val points: Int = 10,
     val hasBeenAsked: Boolean = false
 )
@@ -73,33 +73,34 @@ class Converters {
         }
         return list
     }
-
-//    @TypeConverter
-//    fun fromList(list: List<String>): String {
-//        return JSONArray(list).toString()
-//    }
 }
 
-@Database(entities = [QuestionEntity::class], version = 1, exportSchema = false)
+/**
+ * Local cache of the quiz questions, filled from `assets/questions.json`.
+ * The questions are public data, so the database is a plain SQLite file.
+ */
+@Database(entities = [QuestionEntity::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class QuizDatabase : RoomDatabase() {
     abstract fun questionDao(): QuestionDao
 }
 
 object DatabaseProvider {
+    private const val DB_NAME = "quiz_questions.db"
+
+    /** Name used by versions up to 1.0.2, which kept this cache SQLCipher-encrypted. */
+    private const val LEGACY_DB_NAME = "encrypted_quiz_database.db"
+
     @Volatile
     private var INSTANCE: QuizDatabase? = null
 
-    private val SECRET_PASSPHRASE = "PlayStation_Super_Secret_Key_2026!".toByteArray()
-
     fun getDatabase(context: Context): QuizDatabase {
         return INSTANCE ?: synchronized(this) {
-            val instance = Room.databaseBuilder(
-                context.applicationContext,
-                QuizDatabase::class.java,
-                "encrypted_quiz_database.db"
-            )
-                .openHelperFactory(SupportFactory(SECRET_PASSPHRASE))
+            val appContext = context.applicationContext
+            appContext.deleteDatabase(LEGACY_DB_NAME)
+            val instance = Room.databaseBuilder(appContext, QuizDatabase::class.java, DB_NAME)
+                // The cache is rebuilt from the asset whenever the schema changes.
+                .fallbackToDestructiveMigration(dropAllTables = true)
                 .build()
             INSTANCE = instance
             instance

@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Fetch game database
+        env:
+          DB_URL: ${{ vars.DATSTATION_DB_URL }}
+          DB_TOKEN: ${{ secrets.DATSTATION_DB_TOKEN }}
+        run: |
+          if [ -z "$DB_URL" ]; then
+            echo "::error::Repository variable DATSTATION_DB_URL is not set (see DEVELOPMENT.md)."
+            exit 1
+          fi
+          auth=()
+          if [ -n "$DB_TOKEN" ]; then auth=(-H "Authorization: Bearer $DB_TOKEN"); fi
+          mkdir -p app/src/main/assets
+          curl -fsSL "${auth[@]}" -o app/src/main/assets/datstation.db "$DB_URL"
+          ls -l app/src/main/assets/datstation.db
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Unit tests, lint and debug build
+        run: ./gradlew testDebugUnitTest lintDebug assembleDebug
+
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            app/build/reports/tests/
+            app/build/reports/lint-results-debug.html
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: datstation-debug
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 14

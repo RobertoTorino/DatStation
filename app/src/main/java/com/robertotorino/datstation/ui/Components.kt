@@ -114,58 +114,6 @@ val LocalAppColors = staticCompositionLocalOf { ClassicTheme }
 
 val AppCornerRadius = 12.dp
 
-//@Composable
-//fun SnowfallEffect() {
-//    val snowflakes = remember { mutableStateListOf<Snowflake>() }
-//
-//    BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
-//        val width = constraints.maxWidth.toFloat()
-//        val height = constraints.maxHeight.toFloat()
-//
-//        LaunchedEffect(key1 = Unit) {
-//            while (true) {
-//                withFrameNanos {
-//                    if (snowflakes.size < 50 && Random.nextFloat() < 0.1f) {
-//                        snowflakes.add(
-//                            Snowflake(
-//                                x = Random.nextFloat() * width,
-//                                y = -10f,
-//                                size = (Random.nextFloat() * 5f) + 2f,
-//                                speed = Random.nextFloat() * 2f + 1f
-//                            )
-//                        )
-//                    }
-//                    val toRemove = mutableListOf<Snowflake>()
-//                    snowflakes.forEach { snowflake ->
-//                        snowflake.y += snowflake.speed
-//                        if (snowflake.y > height) {
-//                            toRemove.add(snowflake)
-//                        }
-//                    }
-//                    snowflakes.removeAll(toRemove)
-//                }
-//            }
-//        }
-//
-//        Canvas(modifier = Modifier.fillMaxSize()) {
-//            snowflakes.forEach { snowflake ->
-//                drawCircle(
-//                    color = Color.White.copy(alpha = 0.7f),
-//                    radius = snowflake.size,
-//                    center = Offset(snowflake.x, snowflake.y)
-//                )
-//            }
-//        }
-//    }
-//}
-//
-//private class Snowflake(
-//    var x: Float,
-//    var y: Float,
-//    val size: Float,
-//    val speed: Float
-//)
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun StatusIcon(
@@ -202,41 +150,6 @@ fun StatusIcon(
     )
 }
 
-//@Composable
-//fun ControlCharButton(
-//    modifier: Modifier = Modifier,
-//    text: String? = null,
-//    icon: ImageVector? = null,
-//    width: androidx.compose.ui.unit.Dp = 56.dp,
-//    onClick: () -> Unit
-//) {
-//    val colors = LocalAppColors.current
-//    Box(
-//        modifier = modifier
-//            .size(width = width, height = 56.dp)
-//            .background(colors.boxBackground, RoundedCornerShape(8.dp))
-//            .border(1.dp, colors.boxBorder, RoundedCornerShape(8.dp))
-//            .clickable { onClick() },
-//        contentAlignment = Alignment.Center
-//    ) {
-//        if (icon != null) {
-//            Icon(
-//                imageVector = icon,
-//                contentDescription = text,
-//                tint = colors.boxText,
-//                modifier = Modifier.size(24.dp)
-//            )
-//        } else if (text != null) {
-//            Text(
-//                text = text,
-//                color = colors.boxText,
-//                fontWeight = FontWeight.Bold,
-//                fontSize = 20.sp
-//            )
-//        }
-//    }
-//}
-
 @Composable
 fun HelpItem(icon: ImageVector, label: String, description: String) {
     val colors = LocalAppColors.current
@@ -249,24 +162,6 @@ fun HelpItem(icon: ImageVector, label: String, description: String) {
         }
     }
 }
-
-//@Composable
-//fun FilterChip(label: String, selected: Boolean, onClick: () -> Unit) {
-//    val colors = LocalAppColors.current
-//    Surface(
-//        modifier = Modifier.clickable { onClick() },
-//        shape = RoundedCornerShape(16.dp),
-//        color = if (selected) colors.boxBorder else colors.boxBackground,
-//        border = androidx.compose.foundation.BorderStroke(1.dp, colors.boxBorder)
-//    ) {
-//        Text(
-//            text = label,
-//            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-//            fontSize = 10.sp,
-//            color = if (selected) colors.boxBackground else colors.boxText
-//        )
-//    }
-//}
 
 @Composable
 fun AppShortcut(letter: String, label: String, onClick: () -> Unit) {

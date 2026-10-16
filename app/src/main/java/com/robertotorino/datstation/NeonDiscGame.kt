@@ -66,6 +66,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -144,6 +145,7 @@ fun NeonDiscGame(db: androidx.sqlite.db.SupportSQLiteDatabase?, onExit: () -> Un
     val columns = 8
     val rows = 12
     val context = LocalContext.current
+    val resources = LocalResources.current
     val buttonShape = RoundedCornerShape(AppCornerRadius)
 
     // Core Game States
@@ -279,7 +281,7 @@ fun NeonDiscGame(db: androidx.sqlite.db.SupportSQLiteDatabase?, onExit: () -> Un
             timeLeft--
             if (timeLeft <= 0) {
                 isGameOver = true
-                gameOverReason = context.getString(R.string.times_up)
+                gameOverReason = resources.getString(R.string.times_up)
             }
         }
     }
@@ -329,7 +331,7 @@ fun NeonDiscGame(db: androidx.sqlite.db.SupportSQLiteDatabase?, onExit: () -> Un
                 if (checkLossCondition(grid, currentTheme, isGodMode)) {
                     isGameOver = true
                     gameOverReason = if (currentTheme == StageTheme.BOX_FILL)
-                        context.getString(R.string.enemy_in_box) else context.getString(R.string.enemies_connected)
+                        resources.getString(R.string.enemy_in_box) else resources.getString(R.string.enemies_connected)
                 } else if (!isEndLevel && checkWinCondition(grid, columns, rows, currentTheme)) {
                     isLevelWon = true
                     wonLevels = wonLevels + level
@@ -350,7 +352,7 @@ fun NeonDiscGame(db: androidx.sqlite.db.SupportSQLiteDatabase?, onExit: () -> Un
                             saveNeonDiscResults(db, level, score, true)
                         } else {
                             isGameOver = true
-                            gameOverReason = context.getString(R.string.board_full)
+                            gameOverReason = resources.getString(R.string.board_full)
                         }
                     }
                 }
@@ -795,7 +797,7 @@ fun NeonDiscGame(db: androidx.sqlite.db.SupportSQLiteDatabase?, onExit: () -> Un
 
                                     if (activeDisc.console.faction == Faction.GOOD) {
                                         isGameOver = true
-                                        gameOverReason = context.getString(R.string.shot_friendly)
+                                        gameOverReason = resources.getString(R.string.shot_friendly)
                                     } else {
                                         if (isEndLevel) {
                                             timeLeft += 5
@@ -817,7 +819,7 @@ fun NeonDiscGame(db: androidx.sqlite.db.SupportSQLiteDatabase?, onExit: () -> Un
                                     }
                                 } else {
                                     inGameNotification =
-                                        context.getString(R.string.shoot_unlock_msg)
+                                        resources.getString(R.string.shoot_unlock_msg)
                                 }
                             }
                         },

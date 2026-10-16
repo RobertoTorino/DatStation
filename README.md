@@ -1,4 +1,4 @@
-[![Android Release Build](https://github.com/RobertoTorino/DatStation/actions/workflows/release.yml/badge.svg)](https://github.com/RobertoTorino/DatStation/actions/workflows/release.yml) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CI](https://github.com/RobertoTorino/DatStation/actions/workflows/ci.yml/badge.svg)](https://github.com/RobertoTorino/DatStation/actions/workflows/ci.yml) [![Release](https://github.com/RobertoTorino/DatStation/actions/workflows/release.yml/badge.svg)](https://github.com/RobertoTorino/DatStation/actions/workflows/release.yml) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ---
 [PRIVACY_POLICY.md](PRIVACY_POLICY.md)
@@ -7,7 +7,7 @@
 
 # DatStation
 
-### Lightweight Android App with database that contains ID's:
+### Lightweight Android App with database that contains id's:
 - for almost all PS1 (PSX) games.
 - for almost all PS2 games.
 - for almost all PS3 games.

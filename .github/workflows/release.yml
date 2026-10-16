@@ -1,23 +1,40 @@
-name: Android Release Build
+name: Release
+
+# A release is cut by pushing a version tag:
+#   git tag v1.0.3 && git push origin v1.0.3
+# The tag decides versionName (1.0.3) and versionCode (10003). Nothing is committed back.
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 permissions:
   contents: write
 
 jobs:
-  build-and-version:
-    if: ${{ !contains(github.event.head_commit.message, '[skip-version]') }}
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+
+      - name: Check release secrets
+        env:
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          ALIAS: ${{ secrets.ALIAS }}
+          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          missing=""
+          for name in SIGNING_KEY ALIAS KEY_STORE_PASSWORD KEY_PASSWORD; do
+            if [ -z "${!name}" ]; then missing="$missing $name"; fi
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secrets:$missing. A release must be signed."
+            exit 1
+          fi
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -26,92 +43,64 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Ensure ProGuard rules file exists
+      - name: Fetch game database
+        env:
+          DB_URL: ${{ vars.DATSTATION_DB_URL }}
+          DB_TOKEN: ${{ secrets.DATSTATION_DB_TOKEN }}
         run: |
-          if [ ! -f app/proguard-rules.pro ]; then
-            printf '%s\n' '# Release minification rules.' > app/proguard-rules.pro
+          if [ -z "$DB_URL" ]; then
+            echo "::error::Repository variable DATSTATION_DB_URL is not set (see DEVELOPMENT.md)."
+            exit 1
           fi
+          auth=()
+          if [ -n "$DB_TOKEN" ]; then auth=(-H "Authorization: Bearer $DB_TOKEN"); fi
+          mkdir -p app/src/main/assets
+          curl -fsSL "${auth[@]}" -o app/src/main/assets/datstation.db "$DB_URL"
+          ls -l app/src/main/assets/datstation.db
+
+      - name: Derive version from tag
+        id: version
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          IFS=. read -r major minor patch <<< "$version"
+          code=$(( major * 10000 + minor * 100 + patch ))
+          echo "name=$version" >> "$GITHUB_OUTPUT"
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          echo "Building $version (versionCode $code)"
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
-      - name: Bump version in app config
-        id: bump
-        shell: bash
-        run: |
-          set -e
-          python - <<'PY'
-          import os
-          import re
+      - name: Unit tests and lint
+        run: ./gradlew testDebugUnitTest lintDebug
 
-          path = 'app/build.gradle.kts'
-          with open(path, 'r', encoding='utf-8') as f:
-              content = f.read()
-
-          version_match = re.search(r'versionName\s*=\s*"([^"]+)"', content)
-          if not version_match:
-              raise SystemExit('versionName not found in app/build.gradle.kts')
-
-          current = version_match.group(1)
-          parts = [int(part) for part in current.split('.')]
-          while len(parts) < 3:
-              parts.append(0)
-          parts[0] = parts[0] if len(parts) >= 1 else 0
-          parts[1] = parts[1] if len(parts) >= 2 else 0
-          parts[2] += 1
-          new_version = '.'.join(str(part) for part in parts)
-
-          content = re.sub(r'versionName\s*=\s*"[^"]+"', f'versionName = "{new_version}"', content, count=1)
-
-          code_match = re.search(r'versionCode\s*=\s*(\d+)', content)
-          if code_match:
-              new_code = int(code_match.group(1)) + 1
-              content = re.sub(r'versionCode\s*=\s*\d+', f'versionCode = {new_code}', content, count=1)
-
-          with open(path, 'w', encoding='utf-8') as f:
-              f.write(content)
-
-          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
-              out.write(f'new_version={new_version}\n')
-              out.write(f'tag=v{new_version}\n')
-          PY
-
-      - name: Build the Android app
-        run: ./gradlew assembleRelease
-
-      - name: Sign APK (Optional - if secrets are set)
-        id: sign_app
-        uses: r0adkll/sign-android-release@v1
-        if: env.SIGNING_KEY != null
-        with:
-          releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+      - name: Decode keystore
         env:
           SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+        run: echo "$SIGNING_KEY" | base64 --decode > "$RUNNER_TEMP/release.jks"
+
+      - name: Build signed release APK
+        env:
+          DATSTATION_KEYSTORE: ${{ runner.temp }}/release.jks
+          DATSTATION_KEYSTORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+          DATSTATION_KEY_ALIAS: ${{ secrets.ALIAS }}
+          DATSTATION_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          ./gradlew assembleRelease \
+            -Pdatstation.versionName=${{ steps.version.outputs.name }} \
+            -Pdatstation.versionCode=${{ steps.version.outputs.code }}
+          mv app/build/outputs/apk/release/datstation-release.apk \
+             "app/build/outputs/apk/release/datstation-${{ steps.version.outputs.name }}.apk"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gallery-release-${{ steps.bump.outputs.new_version }}
-          path: app/build/outputs/apk/release/*.apk
+          name: datstation-${{ steps.version.outputs.name }}
+          path: app/build/outputs/apk/release/datstation-${{ steps.version.outputs.name }}.apk
 
-      - name: Commit version bump and create tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add app/build.gradle.kts
-          if git diff --cached --quiet; then
-            echo "No version change was needed."
-            exit 0
-          fi
-
-          git commit -m "Bump version to ${{ steps.bump.outputs.new_version }} [skip-version]"
-          git tag "v${{ steps.bump.outputs.new_version }}"
-          git push origin HEAD:${{ github.ref_name }}
-          git push origin "v${{ steps.bump.outputs.new_version }}"
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: DatStation ${{ steps.version.outputs.name }}
+          generate_release_notes: true
+          files: app/build/outputs/apk/release/datstation-${{ steps.version.outputs.name }}.apk

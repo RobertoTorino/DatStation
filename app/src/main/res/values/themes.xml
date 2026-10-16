@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.DatStation" parent="android:Theme.Material.Light.NoActionBar" />
+    <!--
+        A dark parent so the status bar icons stay light on the app's dark surfaces,
+        and a dark window background so cold start does not flash white before Compose draws.
+    -->
+    <style name="Theme.DatStation" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
 </resources>

@@ -32,7 +32,12 @@ build/
 out/
 *.iml
 
+# ===== Large data shipped outside git =====
+# The game catalogue is downloaded at build time; see DEVELOPMENT.md
+app/src/main/assets/datstation.db
+
 # ===== Android build outputs =====
+*.class
 *.apk
 *.aab
 output-metadata.json

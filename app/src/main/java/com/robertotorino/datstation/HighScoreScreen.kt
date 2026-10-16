@@ -36,6 +36,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -184,9 +188,16 @@ fun HighScoresScreen(
     db: SupportSQLiteDatabase?,
     onBackClicked: () -> Unit
 ) {
-    val scores by remember { mutableStateOf(fetchTopScores(db)) }
-    val summaries by remember { mutableStateOf(fetchGameSummaries(db)) }
-    val trophies by remember { mutableStateOf(fetchTrophySummaries(db)) }
+    var scores by remember { mutableStateOf<List<ScoreEntry>>(emptyList()) }
+    var summaries by remember { mutableStateOf<List<GameSummary>>(emptyList()) }
+    var trophies by remember { mutableStateOf<List<TrophySummary>>(emptyList()) }
+    LaunchedEffect(db) {
+        withContext(Dispatchers.IO) {
+            scores = fetchTopScores(db)
+            summaries = fetchGameSummaries(db)
+            trophies = fetchTrophySummaries(db)
+        }
+    }
 
     Scaffold(
         topBar = {
